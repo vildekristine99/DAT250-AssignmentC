@@ -29,7 +29,7 @@ public class PollController {
 
     @PostMapping("/poll")
     public void newPoll(@RequestBody Poll newPoll) {
-        entityDAO.addPolldb(newPoll);
+        pollRepository.save(newPoll);
     }
 
     @GetMapping("/poll/{id}/pollresult") // kanskje noe / id her?

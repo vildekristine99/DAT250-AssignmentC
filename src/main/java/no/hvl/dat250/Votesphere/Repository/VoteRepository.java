@@ -11,7 +11,5 @@ public interface VoteRepository extends CrudRepository<Vote,Integer>  {
 
  //Vote saveVote(Vote vote);
 
- List<Vote> findAllVote();
-
-
+ //List<Vote> findAllVote();
 }

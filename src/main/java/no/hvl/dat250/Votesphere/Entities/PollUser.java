@@ -26,7 +26,6 @@ public class PollUser {
         polls.add(poll);
     }
 
-
     public int getUserId() {
         return userId;
     }

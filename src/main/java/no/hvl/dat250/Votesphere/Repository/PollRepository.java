@@ -11,5 +11,5 @@ public interface PollRepository extends CrudRepository<Poll, Integer> {
 
     void deletePollByPollId(int id);
 
-    List<Poll> findAllPoll();
+    //List<Poll> findAllPoll();
 }
