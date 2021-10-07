@@ -24,7 +24,7 @@ public class PollController {
 
     @GetMapping("/poll/{id}")
     public Poll poll(@PathVariable int id) {
-        return entityDAO.retrievePoll(id);
+        return pollRepository.findByPollId(id);
     }
 
     @PostMapping("/poll")
