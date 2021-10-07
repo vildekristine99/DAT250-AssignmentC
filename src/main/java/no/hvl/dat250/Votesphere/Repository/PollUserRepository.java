@@ -13,5 +13,5 @@ public interface PollUserRepository extends CrudRepository<Integer, PollUser> {
 
     PollUser deleteByUserId(int userId);
 
-    
+
 }
