@@ -39,7 +39,7 @@ public class MapService {
                 .collect(Collectors.toList()).get(0);
     }
 
-    private PollUserDTO convertToPollUserDTO(PollUser pollUser){
+    private PollUserDTO convertToPollUserDTO(PollUser pollUser) {
         PollUserDTO pollUserDTO = new PollUserDTO();
         pollUserDTO.setUserId(pollUser.getUserId());
         pollUserDTO.setUsername(pollUser.getUsername());
@@ -64,7 +64,7 @@ public class MapService {
                 .collect(Collectors.toList()).get(0);
     }
 
-    public List<PollDTO> getPollbyUser(Long pollUserId){
+    public List<PollDTO> getPollbyUser(Long pollUserId) {
         return ((List<Poll>) pollRepository
                 .findAll())
                 .stream()
@@ -73,7 +73,7 @@ public class MapService {
                 .collect(Collectors.toList());
     }
 
-    private PollDTO convertToPollDTO(Poll poll){
+    private PollDTO convertToPollDTO(Poll poll) {
         PollDTO pollDTO = new PollDTO();
         pollDTO.setPollId(poll.getPollId());
         pollDTO.setPollName(poll.getPollName());
