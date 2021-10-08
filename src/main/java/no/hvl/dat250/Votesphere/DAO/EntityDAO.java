@@ -24,16 +24,16 @@ public final class EntityDAO {
                 .getResultList();
     }
 
-    public PollUser retrievePollUser(int pollUserId) {
+    public PollUser retrievePollUser(Long pollUserId) {
         em.getTransaction().begin();
         return em.find(PollUser.class, pollUserId);
     }
 
-    public Poll retrievePoll(int pollId) {
+    public Poll retrievePoll(Long pollId) {
         return em.find(Poll.class, pollId);
     }
 
-    public Vote retrieveVote(int voteId) {
+    public Vote retrieveVote(Long voteId) {
         return em.find(Vote.class, voteId);
     }
 

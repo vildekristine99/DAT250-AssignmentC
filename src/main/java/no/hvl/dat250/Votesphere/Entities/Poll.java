@@ -7,8 +7,7 @@ import java.util.Set;
 @Entity
 public class Poll {
     @Id
-    private int pollId;
-    private int pin;
+    private Long pollId;
     private String pollName;
     private boolean isPublic;
 
@@ -21,7 +20,8 @@ public class Poll {
     public void addVote(Vote vote){
         votes.add(vote);
     }
-    public int getPollId() {
+
+    public Long getPollId() {
         return pollId;
     }
 
@@ -37,7 +37,7 @@ public class Poll {
         return votes;
     }
 
-    public void setPollId(int pollId) {
+    public void setPollId(Long pollId) {
         this.pollId = pollId;
     }
 
@@ -61,11 +61,6 @@ public class Poll {
         this.pollUser = pollUser;
     }
 
-    public int getPin() {
-        return pin;
-    }
 
-    public void setPin(int pin) {
-        this.pin = pin;
-    }
+
 }

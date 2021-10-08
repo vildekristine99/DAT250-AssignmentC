@@ -8,13 +8,16 @@ import no.hvl.dat250.Votesphere.Entities.Poll;
 import no.hvl.dat250.Votesphere.Entities.Vote;
 import no.hvl.dat250.Votesphere.Repository.PollRepository;
 import no.hvl.dat250.Votesphere.Repository.VoteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PollController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
+    @Autowired
     private PollRepository pollRepository;
+    @Autowired
     private VoteRepository voteRepository;
 
     @GetMapping("/polls")
@@ -23,7 +26,7 @@ public class PollController {
     }
 
     @GetMapping("/poll/{id}")
-    public Poll poll(@PathVariable int id) {
+    public Poll poll(@PathVariable Long id) {
         return pollRepository.findByPollId(id);
     }
 
@@ -33,12 +36,12 @@ public class PollController {
     }
 
     @GetMapping("/poll/{id}/pollresult") // kanskje noe / id her?
-    public Set<Vote> voteResult(@PathVariable int id) {
+    public Set<Vote> voteResult(@PathVariable Long id) {
         return pollRepository.findByPollId(id).getVotes();
     }
 
     @PostMapping("/poll/{id}")
-    public void newVote(@RequestBody Vote vote, @PathVariable int id) {
+    public void newVote(@RequestBody Vote vote, @PathVariable Long id) {
         Poll poll = pollRepository.findByPollId(id);
         poll.addVote(vote);
         voteRepository.save(vote);
@@ -46,7 +49,7 @@ public class PollController {
     }
 
     @DeleteMapping("/poll/{id}")
-    public void removePoll(@PathVariable int id) {
+    public void removePoll(@PathVariable Long id) {
         pollRepository.deletePollByPollId(id);
     }
 }

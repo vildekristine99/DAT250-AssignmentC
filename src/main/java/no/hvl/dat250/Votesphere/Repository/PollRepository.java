@@ -4,12 +4,12 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import no.hvl.dat250.Votesphere.Entities.Poll;
 
-public interface PollRepository extends CrudRepository<Poll, Integer> {
-    Poll findByPollId(int id);
+public interface PollRepository extends CrudRepository<Poll, Long> {
+    Poll findByPollId(Long id);
 
-    //boolean existsByPollId(int id);
+    //boolean existsByPollId(Long id);
 
-    void deletePollByPollId(int id);
+    void deletePollByPollId(Long id);
 
     //List<Poll> findAllPoll();
 }

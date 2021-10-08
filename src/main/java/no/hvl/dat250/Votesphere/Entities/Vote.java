@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int voteId;
+    private Long voteId;
 
     @ManyToOne
     private Poll poll;
@@ -19,13 +19,13 @@ public class Vote {
 
     }
 
-    public Vote(int voteId, Poll poll, String value) {
+    public Vote(Long voteId, Poll poll, String value) {
         this.voteId = voteId;
         this.poll = poll;
         this.value = value;
     }
 
-    public int getVoteId() {
+    public Long getVoteId() {
         return voteId;
     }
 
@@ -37,7 +37,7 @@ public class Vote {
         return value;
     }
 
-    public void setVoteId(int voteId) {
+    public void setVoteId(Long voteId) {
         this.voteId = voteId;
     }
 

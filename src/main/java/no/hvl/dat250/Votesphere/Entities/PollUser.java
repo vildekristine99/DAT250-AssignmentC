@@ -10,7 +10,7 @@ import java.util.Set;
 public class PollUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private Long userId;
 
     private String username;
     private String firstname;
@@ -26,11 +26,11 @@ public class PollUser {
         polls.add(poll);
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
