@@ -16,9 +16,9 @@ import no.hvl.dat250.Votesphere.Entities.PollUser;
 import no.hvl.dat250.Votesphere.Repository.PollUserRepository;
 import java.util.List;
 
-@RestController
+//@RestController
 public class MapController {
-
+/*
     @Autowired
     private MapService mapService;
 
@@ -41,6 +41,7 @@ public class MapController {
     }
 
     @GetMapping("/polls")
+    @ResponseBody
     public List<PollDTO> getAllPolls() {
         List<PollDTO> polls = mapService.getAllPolls();
         return polls;
@@ -49,6 +50,6 @@ public class MapController {
     @PostMapping("/poll")
     public void newPoll(@RequestBody Poll newPoll) {
         pollRepository.save(newPoll);
-    }
+    }*/
 
 }
