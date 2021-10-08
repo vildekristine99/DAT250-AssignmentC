@@ -29,7 +29,7 @@ public class EntityCreator {
         return poll;
     }
 
-    public Vote createVote(Poll poll, PollUser voter, String value){
+    public Vote createVote(Poll poll, PollUser voter, boolean value){
         Vote vote = new Vote();
         vote.setPoll(poll);
         vote.setValue(value);;

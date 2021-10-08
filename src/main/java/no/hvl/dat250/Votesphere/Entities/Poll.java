@@ -7,6 +7,7 @@ import java.util.Set;
 @Entity
 public class Poll {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pollId;
     private String pollName;
     private boolean isPublic;

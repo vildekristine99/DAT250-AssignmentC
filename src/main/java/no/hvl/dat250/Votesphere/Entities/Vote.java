@@ -13,13 +13,13 @@ public class Vote {
     @ManyToOne
     private Poll poll;
 
-    private String value;
+    private boolean value;
 
     public Vote () {
 
     }
 
-    public Vote(Long voteId, Poll poll, String value) {
+    public Vote(Long voteId, Poll poll, boolean value) {
         this.voteId = voteId;
         this.poll = poll;
         this.value = value;
@@ -33,7 +33,7 @@ public class Vote {
         return poll;
     }
 
-    public String getValue() {
+    public boolean getValue() {
         return value;
     }
 
@@ -45,7 +45,7 @@ public class Vote {
         this.poll = poll;
     }
 
-    public void setValue(String value) {
+    public void setValue(boolean value) {
         this.value = value;
     }
 

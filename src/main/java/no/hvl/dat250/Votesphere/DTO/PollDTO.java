@@ -5,6 +5,25 @@ public class PollDTO {
     private String pollName;
     private String creatorName;
     private boolean isPublic;
+    private Long yesVotes;
+    private Long noVotes;
+
+
+    public Long getYesVotes() {
+        return yesVotes;
+    }
+
+    public void setYesVotes(Long yesVotes) {
+        this.yesVotes = yesVotes;
+    }
+
+    public Long getNoVotes() {
+        return noVotes;
+    }
+
+    public void setNoVotes(Long noVotes) {
+        this.noVotes = noVotes;
+    }
 
     public String getCreatorName() {
         return creatorName;
