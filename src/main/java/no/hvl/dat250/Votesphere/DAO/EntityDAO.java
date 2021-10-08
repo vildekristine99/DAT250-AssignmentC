@@ -58,7 +58,7 @@ public final class EntityDAO {
     }
 
     //må oppdater poll hver gang også
-    public void addVotedb2(Vote vote, int pollId) {
+    public void addVotedb2(Vote vote, long pollId) {
         em.getTransaction().begin();
         Poll poll = retrievePoll(pollId);
         poll.addVote(vote);
@@ -68,7 +68,7 @@ public final class EntityDAO {
         em.getTransaction().commit();
     }
 
-    public void removePoll(int pollId) {
+    public void removePoll(long pollId) {
         em.getTransaction().begin();
         Poll poll = retrievePoll(pollId);
         em.remove(poll);
