@@ -8,8 +8,11 @@ import no.hvl.dat250.Votesphere.Entities.Vote;
 import no.hvl.dat250.Votesphere.Repository.PollRepository;
 import no.hvl.dat250.Votesphere.Repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import no.hvl.dat250.Votesphere.DTO.MapService;
+import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
 public class PollController {
@@ -24,36 +27,73 @@ public class PollController {
 
     @GetMapping("/polls")
     @ResponseBody
-    public List<PollDTO> getAllPolls() {
-        List<PollDTO> polls = mapService.getAllPolls();
-        return polls;
+    public ResponseEntity<List<PollDTO>> getAllPolls() {
+
+        try {
+            List<PollDTO> polls = mapService.getAllPolls();
+            if (polls.isEmpty()) {
+                return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(polls, HttpStatus.OK);
+
+        } catch(Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @PostMapping("/poll")
-    public void newPoll(@RequestBody Poll newPoll) {
-        if(pollRepository.existsById(newPoll.getPollId())){
-            pollRepository.save(newPoll);
-        } //else trow exception
+    public ResponseEntity<Poll> newPoll(@RequestBody Poll newPoll) {
+        try{
+            Poll poll = pollRepository.save(newPoll);
+            return new ResponseEntity<>(poll, HttpStatus.CREATED);
 
+        } catch(Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+
+        }
     }
 
     @GetMapping("/polls/{id}")
     @ResponseBody
-    public PollDTO pollById(@PathVariable Long id) {
-        return mapService.getPollbyId(id);
+    public ResponseEntity<PollDTO> pollById(@PathVariable Long id) {
+
+        PollDTO pollDTO = mapService.getPollbyId(id);
+
+        if (pollDTO != null) {
+            return new ResponseEntity<>(pollDTO, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
+    //Vet ikke hvordan vi skal gjøre dette
     @GetMapping("/poll/{id}/pollresult") // kanskje noe / id her?
-    public Set<Vote> voteResult(@PathVariable Long id) {
-        return pollRepository.findByPollId(id).getVotes();
+    public ResponseEntity<Set<Vote>> voteResult(@PathVariable Long id) {
+
+        try {
+            Set<Vote> votes = pollRepository.findByPollId(id).getVotes();
+
+            if (votes.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(votes, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    @PostMapping("/polls/{id}")
-    public void newVote(@RequestBody Vote vote, @PathVariable Long id) {
-        Poll poll = pollRepository.findByPollId(id);
-        poll.addVote(vote);
-        voteRepository.save(vote);
-        pollRepository.save(poll);
+    @PostMapping("/vote")
+    public ResponseEntity<Vote> newVote(@RequestBody Vote vote) {
+
+        try {
+            Vote savedVote = voteRepository.save(vote);
+            return new ResponseEntity<>(savedVote, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping("/poll/{id}")
