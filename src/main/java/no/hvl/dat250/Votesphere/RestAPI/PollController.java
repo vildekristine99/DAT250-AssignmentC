@@ -2,8 +2,6 @@ package no.hvl.dat250.Votesphere.RestAPI;
 
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicLong;
-import no.hvl.dat250.Votesphere.DAO.EntityDAO;
 import no.hvl.dat250.Votesphere.DTO.PollDTO;
 import no.hvl.dat250.Votesphere.Entities.Poll;
 import no.hvl.dat250.Votesphere.Entities.Vote;
@@ -33,13 +31,11 @@ public class PollController {
 
     @PostMapping("/poll")
     public void newPoll(@RequestBody Poll newPoll) {
-        pollRepository.save(newPoll);
+        if(pollRepository.existsById(newPoll.getPollId())){
+            pollRepository.save(newPoll);
+        } //else trow exception
+
     }
-/*
-    @GetMapping("/poll/{id}")
-    public Poll poll(@PathVariable Long id) {
-        return pollRepository.findByPollId(id);
-    }*/
 
     @GetMapping("/polls/{id}")
     @ResponseBody
