@@ -13,7 +13,7 @@ public interface PollUserRepository extends CrudRepository<PollUser, Long> {
 
     PollUser savePollUser(PollUser pu);
 
-    PollUser deleteByUserId(Long userId);*/
+    */
 
 
 }
