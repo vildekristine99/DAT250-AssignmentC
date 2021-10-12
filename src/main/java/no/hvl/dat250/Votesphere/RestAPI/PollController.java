@@ -96,8 +96,24 @@ public class PollController {
         }
     }
 
-    @DeleteMapping("/poll/{id}")
-    public void removePoll(@PathVariable Long id) {
-        pollRepository.deletePollByPollId(id);
+    @DeleteMapping("/polls/{id}")
+    public ResponseEntity<HttpStatus> removePoll(@PathVariable Long id) {
+        try {
+            pollRepository.deletePollByPollId(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch(Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping("/polls")
+    public ResponseEntity<HttpStatus> removeAllPolls() {
+
+        try {
+            pollRepository.deleteAll();
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch(Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
