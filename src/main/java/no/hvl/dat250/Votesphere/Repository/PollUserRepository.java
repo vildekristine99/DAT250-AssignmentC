@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface PollUserRepository extends CrudRepository<PollUser, Long> {
 
     PollUser findByUserId(Long userId);
-    PollUser deleteByUserId(Long userId);
+
 
 /*
     boolean existsByUserId(Long userId);

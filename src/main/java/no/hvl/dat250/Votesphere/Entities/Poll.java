@@ -12,7 +12,7 @@ public class Poll {
     private String pollName;
     private boolean isPublic;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private PollUser pollUser;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "poll")

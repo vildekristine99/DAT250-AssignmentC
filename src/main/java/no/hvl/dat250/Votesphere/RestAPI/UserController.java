@@ -77,24 +77,13 @@ public class UserController {
         }
     }
 
-    @DeleteMapping("/users")
-    public ResponseEntity<HttpStatus> deleteAllPollUsers() {
-
-        try {
-            pollUserRepository.deleteAll();
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch(Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
-
     @DeleteMapping("/users/{id}")
     public ResponseEntity<HttpStatus> deletePollUser(@PathVariable Long id) {
         try{
-            pollUserRepository.deleteByUserId(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            pollUserRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
      }

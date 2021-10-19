@@ -58,7 +58,7 @@ public class PollController {
     @GetMapping("/polls/{id}")
     @ResponseBody
     public ResponseEntity<PollDTO> pollById(@PathVariable Long id) {
-
+        System.out.println(id);
         PollDTO pollDTO = mapService.getPollbyId(id);
 
         if (pollDTO != null) {
