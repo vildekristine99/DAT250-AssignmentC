@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import no.hvl.dat250.Votesphere.DTO.PollDTO;
 
 import java.util.List;
 import java.util.Optional;
@@ -70,7 +71,7 @@ public class UserController {
     public ResponseEntity<PollUser> newPollUser(@RequestBody PollUser newUser) {
         try {
             PollUser pollUser =
-                pollUserRepository.save(newUser);
+                    pollUserRepository.save(newUser);
             return new ResponseEntity<>(pollUser, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -78,7 +79,8 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
-    public ResponseEntity<HttpStatus> deletePollUser(@PathVariable Long id) {
+    @ResponseBody
+    public ResponseEntity<Void> deletePollUser(@PathVariable Long id) {
         try{
             pollUserRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
@@ -88,11 +90,20 @@ public class UserController {
         }
      }
 
-     /*@GetMapping("/users/{id}/polls")
-    public List<PollDTO> getPollsByUser(@PathVariable Long id) {
-        try {
+    @GetMapping("/mypolls/{id}")
+    public ResponseEntity<List<PollDTO>> getPollsByUser(@PathVariable Long id) {
 
+        try {
+        List<PollDTO> polls = mapService.getPollbyUser(id);
+
+        if (polls.isEmpty()) {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(polls, HttpStatus.OK);
+
+        } catch(Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    */
 }

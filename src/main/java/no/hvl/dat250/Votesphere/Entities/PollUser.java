@@ -18,9 +18,8 @@ public class PollUser {
     private String password;
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pollUser")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval=true, mappedBy = "pollUser")
     private Set<Poll> polls = new HashSet<>();
-
 
     public void addPoll(Poll poll) {
         polls.add(poll);

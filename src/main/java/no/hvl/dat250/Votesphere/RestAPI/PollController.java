@@ -69,7 +69,7 @@ public class PollController {
     }
 
     //Vet ikke hvordan vi skal gjøre dette
-    @GetMapping("/poll/{id}/pollresult") // kanskje noe / id her?
+    @GetMapping("/pollresult/{id}/") // kanskje noe / id her?
     public ResponseEntity<Set<Vote>> voteResult(@PathVariable Long id) {
 
         try {
@@ -106,14 +106,4 @@ public class PollController {
         }
     }
 
-    @DeleteMapping("/polls")
-    public ResponseEntity<HttpStatus> removeAllPolls() {
-
-        try {
-            pollRepository.deleteAll();
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch(Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

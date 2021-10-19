@@ -15,7 +15,7 @@ public class Poll {
     @ManyToOne(fetch = FetchType.LAZY)
     private PollUser pollUser;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "poll")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval=true, mappedBy = "poll")
     private Set<Vote> votes = new HashSet<Vote>();
 
     public void addVote(Vote vote){
