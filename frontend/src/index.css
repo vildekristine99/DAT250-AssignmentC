@@ -1,13 +1,197 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #D6EEFC;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/** HEADER **/
+
+.header {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 162px;
+  top: 0px;
+  left: 0;
+  z-index: 1;
 }
+
+h1 {
+  font-family: Sora;
+  font-style: normal;
+  font-size: 72px;
+  text-align: center;
+  padding-top: 25px;
+  color: #444444;
+}
+
+
+.login {
+  top: 123px;
+  position: absolute;
+  float: right;
+  right: 0;
+  padding-right: 32px;
+  font-size: 18px;
+  color: #444444;
+  font-family: Sora;
+  font-style: normal;
+  z-index: 2;
+}
+
+.login:hover {
+  cursor: pointer;
+}
+
+a {
+  color:#444444;
+  text-decoration: none;
+}
+
+/**EnterPin**/
+.pinInput {
+  border-radius: 0%;
+}
+
+
+/**Lines**/
+.wrap {
+  align-items: center;
+}
+
+.line {
+  border: 1px solid #444444;
+  width: 100px;
+  height: 0px;
+  background-color: #444444;
+  padding: 0px;
+  margin: 0px;
+}
+
+.line2 {
+  border: 1px solid #444444;
+  width: 100px;
+  background-color: #444444;
+  padding: 0px;
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+}
+
+/**BASIC**/
+.inputDiv {
+  margin: 0 auto;
+  margin-top: 240px;
+}
+
+p {
+  text-align: center;
+  font-family: Sora;
+  font-weight: 600;
+  color:#444444;
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+button {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  border: 2px solid #444444;
+  border-radius: 10px;
+  display: block;
+}
+
+input {
+  border: 2px solid #444444;
+  border-radius: 10px;
+  background: #FFFFFF;
+  font-size: 18px;
+  width: 291px;
+  height: 51px;
+  text-align: center;
+  font-family: Sora;
+  margin: 0 auto; 
+  display: block;
+  margin-bottom: 32px;
+}
+
+
+/**USER HOME**/
+
+.whiteButton {
+  width: 300px;
+  height: 80px;
+  font-size: 24px;
+  color: #444444;
+  background: #FFFFFF;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+
+/**Publish Poll**/ 
+
+.largeInput {
+  width: 500px;
+  height: 150px;
+}
+
+.descriptionBig {
+  font-size: 24px;
+}
+
+.radio{
+  background:#6D9FBB; 
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+  display: inline;
+  
+  margin-left: 20px;
+}
+
+.labelRadio{
+  font-family: Sora;
+  font-weight: 600;
+  color:#444444;
+  font-size: 18px;
+  margin-left: 10px;
+  
+  
+}
+
+.radioDiv {
+  display: block;
+  text-align: center;
+}
+
+.blackButton {
+  width: 230px;
+  height: 60px;
+  font-size: 18px;
+  background: #444444;
+  color: #FFFFFF;
+  margin: 2px auto;
+ 
+}
+
+/**Login**/
+.loginButton{
+  font-size: 18px;
+  width: 291px;
+  height: 51px;
+  text-align: center;
+  margin: 0 auto; 
+  margin-bottom: 32px;
+  background-color: #444444;
+  color: #ffffff;
+}
+
+ 
+
+
+
+
+

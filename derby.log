@@ -1,8 +1,8 @@
 ----------------------------------------------------------------
-Wed Oct 13 11:15:10 CEST 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017c-78ef-1fb0-000001e9ead0 
-on database directory C:\Users\hsm20\IdeaProjects\Votesphere\mydbdirectory with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
-Loaded from file:/C:/Users/hsm20/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Tue Oct 19 11:38:31 CEST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017c-97ea-a1f4-000000947f18 
+on database directory C:\Users\hsm20\IdeaProjects\Votesphere\mydbdirectory with class loader org.springframework.boot.loader.LaunchedURLClassLoader@7e32c033 
+Loaded from jar:file:/C:/Users/hsm20/IdeaProjects/Votesphere/target/Votesphere-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/derby-10.15.2.0.jar!/
 java.vendor=Oracle Corporation
 java.runtime.version=12.0.2+10
 user.dir=C:\Users\hsm20\IdeaProjects\Votesphere
