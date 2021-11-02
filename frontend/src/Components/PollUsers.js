@@ -19,7 +19,7 @@ class PollUsers extends React.Component {
             (result) => {
               this.setState({
                 isLoaded: true,
-                pollUsers: result.pollUsers
+                pollUsers: result
               });
             },
             // Note: it's important to handle errors here
