@@ -3,7 +3,7 @@ import React from "react";
 const PublishPoll = () => {
 
     return (
-    <div className="inputDiv">
+    <div className="publishInputDiv">
             <p className="descriptionBig"> Poll description</p>
             <input className="largeInput" type="text" placeholder="...(max 250 characters)" />
 
@@ -16,7 +16,7 @@ const PublishPoll = () => {
             </div>
         
 
-        <button className="blackButton"> Publish Poll </button>
+        <a href = "#" className="blackButton"> Publish Poll </a>
         <p> Cancel </p>
     </div>
 

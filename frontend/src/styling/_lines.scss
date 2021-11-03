@@ -1,0 +1,22 @@
+.wrap {
+    align-items: center;
+  }
+  
+  .line {
+    border: 1px solid #444444;
+    width: 100px;
+    height: 0px;
+    background-color: #444444;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .line2 {
+    border: 1px solid #444444;
+    width: 100px;
+    background-color: #444444;
+    padding: 0px;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+  }

@@ -1,0 +1,32 @@
+.pinInputDiv{
+
+    margin: 0 auto;
+    margin-top: 240px;
+    text-align: center;
+    font-family: Sora;
+
+    p{
+        text-align: center;
+        font-family: Sora;
+        font-weight: 600;
+        color:#444444;
+        font-size: 18px;
+        padding: 0px;
+        margin: 0px 30px 20px;
+    }
+
+    .pinInput {
+        border: 2px solid #444444;
+        border-radius: 10px;
+        background: #FFFFFF;
+        font-size: 18px;
+        font-weight: 300;
+        width: 291px;
+        height: 51px;
+        text-align: center;
+        font-family: Sora;
+        margin: 0 auto; 
+        margin-bottom: 32px;
+        transition: none;
+    }
+}

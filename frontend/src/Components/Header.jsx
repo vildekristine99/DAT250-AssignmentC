@@ -4,12 +4,13 @@ import { useCallback } from "react";
 const Header = () => {
 
     return (
-        <div>
-    <div className="header">
-        <h1>Votesphere</h1>
-    </div>
-        <div className="login"><a href="/login">Log in / Register</a></div>
-    </div>
+        <div className = "header">
+            <div className="title">
+                <h1>Votesphere</h1>
+            </div>
+                <div className="login"><a href="/login">Log in</a></div>
+                <div className="register"><a href="/register">Register</a></div>
+        </div>
 
     );
 }
