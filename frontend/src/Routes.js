@@ -7,35 +7,36 @@ import Login from './Components/Login.jsx';
 import PublishPoll from "./Components/PublishPoll.jsx";
 import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";
-/*
+
 export default function Routes(props) {
-    
+  
     return (
       <Switch>
         <Route exact path="/">
-          <Header />
+          <Header text="Log in" link="/#/login"/>
           <EnterPin />
         </Route>
-        <Route path="/#/login">
-          <Header />
+        <Route path="/login">
+          <Header text="Go back" link="/"/>
           <Login />
         </Route>
-        <Route path="/#/register">
-          <Header />
+        <Route path="/register">
+          <Header  text="Log in" link="/#/login"/>
           <Register />
         </Route>
-        <Route path="/#/publishPoll">
-          <Header />
+        <Route path="/publishPoll">
+          <Header  text="Go back" link="/#/userHome"/>
           <PublishPoll />
         </Route>
-        <Route path="/#/userHome">
-          <Header />
+        <Route path="/userHome">
+          <Header  text="Log out" link="/"/>
           <UserHome />
         </Route>
-        <Route path="/#/userPolls">
-          <Header />
+        <Route path="/userPolls">
+          <Header  text="Go back" link="/#/userHome"/>
           <UserPolls />
         </Route>
       </Switch>
     );
-  }*/
+    
+  }

@@ -1,4 +1,4 @@
-/*package no.hvl.dat250.Votesphere.securingWeb;
+package no.hvl.dat250.Votesphere.securingWeb;
 
 
 import org.springframework.context.annotation.Bean;
@@ -18,11 +18,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/").permitAll()
+				.antMatchers("/#").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("/login")
+				.loginPage("/#/login")
 				.permitAll()
 				.and()
 			.logout()
@@ -41,4 +41,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return new InMemoryUserDetailsManager(user);
 	}
-}*/
+}

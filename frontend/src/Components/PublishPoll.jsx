@@ -8,10 +8,10 @@ const PublishPoll = () => {
         <input className="largeInput" type="text" placeholder="...(max 250 characters)" />
 
         <div className="radioDiv">
-            <input className="radio" type="radio" id="radio1" value="Public" checked />
+            <input className="radio" type="radio" id="radio1" name="answer" value="Public" checked />
             <label className="labelRadio" for="radio1">Public</label>
 
-            <input className="radio" type="radio" id="radio2" value="Private" />
+            <input className="radio" type="radio" id="radio2" name="answer" value="Private" />
             <label className="labelRadio" for="radio2">Private</label>
         </div>
         

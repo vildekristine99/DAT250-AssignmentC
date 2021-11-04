@@ -1,7 +1,6 @@
 import React from "react";
-import PollUserService from "../Service/PollUserService";
-import PollUsers from "../API/PollUsers";
-
+import PollUserService from "../Service/PollUserService.js";
+import PollUsers from "../API/PollUsers.js";
 
 //class EnterPin extends React.Component {
 
@@ -15,6 +14,4 @@ import PollUsers from "../API/PollUsers";
         )
     }
     
-
-
 export default EnterPin;

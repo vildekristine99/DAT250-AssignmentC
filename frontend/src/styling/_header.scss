@@ -17,36 +17,9 @@
         padding-top: 5px;
         color: $titlegrey;
     }
+    
 
     .login {
-        top: 123px;
-        position: absolute;
-        float: right;
-        right: 0;
-        padding: 0 180px;
-        font-size: 18px;
-        font-style: normal;
-        z-index: 2;
-
-    
-
-        a{
-            text-decoration: none;
-            background: $darkpurple;
-            padding: 7px 25px;
-            text-align: center;
-            color: white;
-            border-radius: 5px;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-    }
-
-    
-
-    .register {
         top: 123px;
         position: absolute;
         float: right;
@@ -59,10 +32,9 @@
 
         a{
             text-decoration: none;
-            background: $darkpurple;
             padding: 7px 25px;
             text-align: center;
-            color: white;
+            color: $titlegrey;
             border-radius: 5px;
 
             &:hover {
