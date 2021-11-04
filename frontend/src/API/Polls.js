@@ -13,7 +13,7 @@ class Polls extends React.Component {
       }
     
       componentDidMount() {
-        fetch("http://localhost:8080/users")
+        fetch("http://localhost:8080/mypolls/${id}")// hente med {id}
           .then(res => res.json())
           .then(
             (result) => {
