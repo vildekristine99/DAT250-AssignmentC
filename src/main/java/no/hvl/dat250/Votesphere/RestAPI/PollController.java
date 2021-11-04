@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import no.hvl.dat250.Votesphere.DTO.MapService;
-import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
 public class PollController {

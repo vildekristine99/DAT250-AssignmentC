@@ -1,7 +1,5 @@
 package no.hvl.dat250.Votesphere.Entities;
 
-import no.hvl.dat250.Votesphere.Entities.Poll;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +9,6 @@ public class PollUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
-
     private String username;
     private String firstname;
     private String lastname;

@@ -1,7 +1,5 @@
 package no.hvl.dat250.Votesphere.Entities;
 
-import no.hvl.dat250.Votesphere.Entities.Poll;
-
 import javax.persistence.*;
 
 @Entity

@@ -1,6 +1,5 @@
 package no.hvl.dat250.Votesphere.Repository;
 
-import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import no.hvl.dat250.Votesphere.Entities.Poll;
 

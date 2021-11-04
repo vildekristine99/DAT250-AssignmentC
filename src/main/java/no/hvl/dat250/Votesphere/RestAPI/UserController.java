@@ -2,11 +2,8 @@ package no.hvl.dat250.Votesphere.RestAPI;
 
 import no.hvl.dat250.Votesphere.DTO.MapService;
 import no.hvl.dat250.Votesphere.DTO.PollUserDTO;
-import no.hvl.dat250.Votesphere.Entities.Poll;
 import no.hvl.dat250.Votesphere.Entities.PollUser;
-import no.hvl.dat250.Votesphere.Repository.PollRepository;
 import no.hvl.dat250.Votesphere.Repository.PollUserRepository;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import no.hvl.dat250.Votesphere.DTO.PollDTO;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 public class UserController {

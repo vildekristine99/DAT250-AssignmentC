@@ -4,41 +4,23 @@ import './styling/_app.scss';
 import reportWebVitals from './reportWebVitals';
 
 import Routes from "./Routes";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from "react-router-dom";
+import EnterPin from './Components/EnterPin.jsx';
+import Header from './Components/Header.jsx';
 
-function App() {
+class App extends React.Component {
 
-  
-    return (
-      <div>
-        <Router>
-          <Routes/>
-        </Router>
-      </div>
-    );
-  
-
-  
+  render() { 
+		return (
+      <div><Header /><EnterPin /></div>
+		)
+	}  
 }
 
-//ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(
+  <App />,
+  document.getElementById('react')
+)
 
 export default App;
 
-/*import logo from './logos/logo_transparent.png';
-import Index from './index.js'
-import './App.css';
-// Hello girl
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <Index />
-    </div>
-  );
-}
-
-export default App;*/
