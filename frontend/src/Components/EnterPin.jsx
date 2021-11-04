@@ -7,7 +7,7 @@ import PollUsers from "../API/PollUsers";
 
     const EnterPin = () => {
         return (
-            <div className="pinInputDiv">
+            <div className="inputDiv">
                 <p>Get your voting on! </p>
                 <input className="pinInput" type="text" placeholder="Enter pin..."/>
                 <PollUsers></PollUsers>

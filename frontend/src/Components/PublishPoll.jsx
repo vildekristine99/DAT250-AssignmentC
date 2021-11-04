@@ -4,16 +4,16 @@ const PublishPoll = () => {
 
     return (
     <div className="publishInputDiv">
-            <p className="descriptionBig"> Poll description</p>
-            <input className="largeInput" type="text" placeholder="...(max 250 characters)" />
+        <p className="descriptionBig"> Poll description</p>
+        <input className="largeInput" type="text" placeholder="...(max 250 characters)" />
 
-            <div className="radioDiv">
-                <input className="radio" type="radio" id="radio1" value="Public" checked />
-                <label className="labelRadio" for="radio1">Public</label>
+        <div className="radioDiv">
+            <input className="radio" type="radio" id="radio1" value="Public" checked />
+            <label className="labelRadio" for="radio1">Public</label>
 
-                <input className="radio" type="radio" id="radio2" value="Private" />
-                <label className="labelRadio" for="radio2">Private</label>
-            </div>
+            <input className="radio" type="radio" id="radio2" value="Private" />
+            <label className="labelRadio" for="radio2">Private</label>
+        </div>
         
 
         <a href = "#" className="blackButton"> Publish Poll </a>

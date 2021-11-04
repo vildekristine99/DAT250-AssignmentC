@@ -9,7 +9,7 @@ const Register = () => {
             <input type="text" placeholder="Last name"/>
             <input type="text" placeholder="Email"/>
             <input type="text" placeholder="Password"/>
-            <p>Register</p>
+            <p className = "registerBtn">Register</p>
         </div>
 
     ); 

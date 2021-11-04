@@ -14,8 +14,8 @@ const Login = () => {
 
       <button className="loginButton">Log in with Facebook</button>
       <button className="loginButton">Log in with Google</button>
-      <p>
-        <a href="/register">Don't have an account? Register</a>
+      <p>Don't have an account? 
+        <a href="/register" className = "loginReg">Register</a>
       </p>
     </div>
   );
