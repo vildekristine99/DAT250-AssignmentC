@@ -13,7 +13,7 @@ class AuthenticationService {
 
     createBasicAuthToken(username, password) {
         return 'Basic ' + window.btoa(username + ":" + password)
-    }
+    }//julil
 }
 
 export default AuthenticationService
