@@ -17,8 +17,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.authorizeRequests()
-				.antMatchers("/#").permitAll()
+		.authorizeRequests()
+				.antMatchers("/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
@@ -27,8 +27,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.logout()
 				.permitAll();
-	}
 
+
+}
+	
+		/*
+			
+	.csrf().disable()   
+        .authorizeRequests()
+        .antMatchers("/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+            //.formLogin().and()
+            .httpBasic();
+    }
+
+*/
+	
 	@Bean
 	@Override
 	public UserDetailsService userDetailsService() {

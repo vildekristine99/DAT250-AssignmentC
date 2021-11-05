@@ -7,8 +7,12 @@ import Login from './Components/Login.jsx';
 import PublishPoll from "./Components/PublishPoll.jsx";
 import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";
+import AuthenticatedRoute from "./Components/Security/AuthenticatedRoute.jsx"
+import LoginComponent from "./Components/Security/LoginComponent.jsx";
 
 export default function Routes(props) {
+
+  
   
     return (
       <Switch>
@@ -17,21 +21,21 @@ export default function Routes(props) {
           <EnterPin />
         </Route>
         <Route path="/login">
-          <Header text="Go back" link="/"/>
-          <Login />
+          {/*<Header text="Go back" link="/"/>*/}
+          <LoginComponent />
         </Route>
         <Route path="/register">
-          <Header  text="Log in" link="/#/login"/>
+          <Header  text="Log in" link="/#/login"/> 
           <Register />
         </Route>
         <Route path="/publishPoll">
           <Header  text="Go back" link="/#/userHome"/>
           <PublishPoll />
         </Route>
-        <Route path="/userHome">
-          <Header  text="Log out" link="/"/>
+        <Route path="/userHome" exact component={UserHome} />
+         {/* <Header  text="Log out" link="/"/>
           <UserHome />
-        </Route>
+    </AuthenticatedRoute>*/}
         <Route path="/userPolls">
           <Header  text="Go back" link="/#/userHome"/>
           <UserPolls />
