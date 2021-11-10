@@ -29,7 +29,7 @@
     width: 25px;
     height: 25px;
     display: inline;
-    
+    cursor: pointer;
     margin-left: 20px;
   }
 
@@ -43,6 +43,11 @@
     margin: 0px;
     margin-top: 30px
     
+  }
+
+  a{
+    color: $titlegrey;
+    text-decoration: none;
   }
   
   .labelRadio{
@@ -71,5 +76,6 @@
     text-align: center;
     padding: 20px 80px;
     text-decoration: none;
+    cursor: pointer;
   }
 }

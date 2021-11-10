@@ -64,15 +64,7 @@ class LoginComponent extends Component {
 
                     <input type="text" placeholder="Username" name="username" onChange={this.handleChange}/>
                     <input type="password" placeholder="Password" name="password" onChange={this.handleChange}/>
-                    <button className="loginButton" onClick={this.loginClicked}>Login</button>
-                <div className="wrap">
-                    <div className="line" />
-                    <p>or</p>
-                    <div className="line" />
-                </div>
-
-                <button className="loginButton">Log in with Facebook</button>
-                <button className="loginButton">Log in with Google</button>
+                    <button className="loginButton" onClick={this.loginClicked}>Log in</button>
                 <p>Don't have an account? 
                     <a href="/#/register" className = "loginReg">Register</a>
                 </p>
@@ -80,7 +72,17 @@ class LoginComponent extends Component {
             </div>
         )
     }
-
 }
 
 export default withRouter(LoginComponent)
+
+/*
+<div className="wrap">
+                    <div className="line" />
+                    <p>or</p>
+                    <div className="line" />
+                </div>
+
+                <button className="loginButton">Log in with Facebook</button>
+                <button className="loginButton">Log in with Google</button>
+*/

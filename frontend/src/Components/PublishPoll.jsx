@@ -1,28 +1,61 @@
 import React from "react"; 
 
-const PublishPoll = () => {
+class PublishPoll extends React.Component {
 
-    return (
-    <div className="publishInputDiv">
-        <p className="descriptionBig"> Poll description</p>
-        <input className="largeInput" type="text" placeholder="...(max 250 characters)" />
+    constructor(props) {
+        super(props)
 
-        <div className="radioDiv">
-            <input className="radio" type="radio" id="radio1" name="answer" value="Public" checked />
-            <label className="labelRadio" for="radio1">Public</label>
+        this.state = {
+            pollName: '',
+            isPublic: true,
+        }
 
-            <input className="radio" type="radio" id="radio2" name="answer" value="Private" />
-            <label className="labelRadio" for="radio2">Private</label>
-        </div>
+        this.handleChange = this.handleChange.bind(this)
+        this.publishButtonClicked = this.publishButtonClicked.bind(this)
+    }
+   
+
+    handleChange(event) {
+        this.setState(
+            {
+                [event.target.name]
+                    : event.target.value
+            }
+        )
+        console.log(event.target.value)
+    }
+
+    
+    publishButtonClicked() {
+
+    }
+
+    render() {
+        return (
+            <div className="publishInputDiv">
+                <p className="descriptionBig" > Poll description</p>
+                
+                <input className="largeInput" name="pollName" type="text" placeholder="...(max 250 characters)" onChange={this.handleChange}/>
         
-
-        <a href = "#" className="blackButton"> Publish Poll </a>
-        <p> Cancel </p>
-    </div>
-
-    );
+                <div className="radioDiv" onChange={this.handleChange}>
+                    <input className="radio" type="radio" id="radio1" name="isPublic" value="true" />
+                    <label className="labelRadio" for="radio1">Public</label>
+        
+                    <input className="radio" type="radio" id="radio2" name="isPublic" value="false" />
+                    <label className="labelRadio" for="radio2">Private</label>
+                </div>
+                
+        
+                <a className="blackButton" onClick={this.publishButtonClicked}> Publish Poll </a>
+                <p><a href="#/userHome"> Cancel </a></p>
+            </div>
+        
+            );
+    }
+    
 
 }
+
 export default PublishPoll; 
 
 

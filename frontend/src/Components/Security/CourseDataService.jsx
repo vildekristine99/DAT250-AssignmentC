@@ -3,7 +3,7 @@ import axios from 'axios'
 const USER = 'in28minutes'
 const PASSWORD = 'dummy'
 const API_URL = 'http://localhost:8080'
-const POLL_API_URL = `${COURSE_API_URL}/polls/${USER}`
+const POLL_API_URL = `${API_URL}/polls/${USER}`
 
 class CourseDataService {
 
