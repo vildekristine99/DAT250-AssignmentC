@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Nov 05 14:48:22 CET 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017c-f05b-83c8-000005258800 
+Wed Nov 10 10:27:04 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017d-092c-1649-000002b517f0 
 on database directory /Users/julieheldal/Documents/DAT250-AssignmentC-1/mydbdirectory with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@42110406 
 Loaded from file:/Users/julieheldal/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Homebrew

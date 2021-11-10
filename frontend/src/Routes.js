@@ -12,8 +12,6 @@ import LoginComponent from "./Components/Security/LoginComponent.jsx";
 
 export default function Routes(props) {
 
-  
-  
     return (
       <Switch>
         <Route exact path="/">
@@ -21,7 +19,7 @@ export default function Routes(props) {
           <EnterPin />
         </Route>
         <Route path="/login">
-          {/*<Header text="Go back" link="/"/>*/}
+          <Header text="Go back" link="/"/>
           <LoginComponent />
         </Route>
         <Route path="/register">
@@ -32,10 +30,10 @@ export default function Routes(props) {
           <Header  text="Go back" link="/#/userHome"/>
           <PublishPoll />
         </Route>
-        <Route path="/userHome" exact component={UserHome} />
-         {/* <Header  text="Log out" link="/"/>
+        <Route path="/userHome">
+          <Header  text="Log out" link="/"/>
           <UserHome />
-    </AuthenticatedRoute>*/}
+        </Route>
         <Route path="/userPolls">
           <Header  text="Go back" link="/#/userHome"/>
           <UserPolls />

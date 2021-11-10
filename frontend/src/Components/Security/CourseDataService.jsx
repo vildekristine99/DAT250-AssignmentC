@@ -8,9 +8,9 @@ const POLL_API_URL = `${COURSE_API_URL}/polls/${USER}`
 class CourseDataService {
 
     retrieveAllCourses(name) {
-        console.log('executed service')
+        //console.log('executed service')
         return axios.get(`${POLL_API_URL}/users`,
-            { headers: { authorization: 'Basic ' + window.btoa(USER + ":" + PASSWORD) } }
+           // { headers: { authorization: 'Basic ' + window.btoa(USER + ":" + PASSWORD) } }
         );
     }
 }
