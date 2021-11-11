@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const PublishPoll = ({pollName, vote}) => {
+const PollResult = ({poll, vote}) => {
     const [vote, setVote] = useState();
 
     handleClick = (voteResult) => {
@@ -11,11 +11,12 @@ const PublishPoll = ({pollName, vote}) => {
 
     return (
     <div className="inputDiv">
-        <h2>{pollName}</h2>
-        <button className="whiteButton" onClick={() => handleClick ("yes")}>Yes</button>
-        <button className="whiteButton" onClick={() => handleClick ("no")}>No</button>
+        <h2>{poll.getPollName}</h2>
+        <p>Du stemte {vote}</p>
+        <p>Ja stemmer: {poll.yesVotes}</p>
+        <p>Nei stemmer: {poll.noVotes}</p>
     </div>
     );
 }
 
-export default PublishPoll;
+export default PollResult;
