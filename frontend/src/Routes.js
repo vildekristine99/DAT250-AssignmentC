@@ -38,11 +38,11 @@ export default function Routes(props) {
         <Route path="/userPolls">
           <Header  text="Go back" link="/#/userHome"/>
           <UserPolls />
-        </Route>
+        </Route>{/*
         <Route path="/viewPoll">
           <Header text="Log out" link="/#/viewPoll"/>
           <ViewPoll />
-          </Route>
+        </Route>*/}
       </Switch>
     );
     
