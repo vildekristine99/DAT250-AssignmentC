@@ -12,7 +12,7 @@ class LoginComponent extends Component {
             username: '',
             password: '',
             hasLoginFailed: false,
-            showSuccessMessage: false
+            message: ''
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -59,8 +59,7 @@ class LoginComponent extends Component {
             
             <div>
                 <div className="inputDiv">
-                    {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
-                    {this.state.showSuccessMessage && <div>Login Sucessful</div>}
+
 
                     <input type="text" placeholder="Username" name="username" onChange={this.handleChange}/>
                     <input type="password" placeholder="Password" name="password" onChange={this.handleChange}/>

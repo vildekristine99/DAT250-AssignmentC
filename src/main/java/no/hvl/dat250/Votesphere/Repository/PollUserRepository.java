@@ -11,10 +11,10 @@ public interface PollUserRepository extends CrudRepository<PollUser, Long> {
 
     PollUser findByUsername(String username);
 
+    
 
+    boolean existsByUsername(String username);
 /*
-    boolean existsByUserId(Long userId);
-
     PollUser savePollUser(PollUser pu);
 
     */

@@ -1,5 +1,5 @@
 
-package no.hvl.dat250.Votesphere.securingWeb;
+package no.hvl.dat250.Votesphere.Security.Services;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,23 +14,22 @@ import no.hvl.dat250.Votesphere.DTO.PollUserService;
 
 import java.util.ArrayList;
 
+import javax.transaction.Transactional;
+
 
 @Service
-public class JwtUserDetails implements UserDetailsService {
+public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     PollUserService pollUserService;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        
-        PollUserDTO pollUserDTO = pollUserService.getPollUser(username);
-        if(pollUserDTO != null) {
-            
-            String password = pollUserDTO.getPassword();
-            System.out.println(pollUserDTO.getUsername());
+    
 
-            return new User(username, password, new ArrayList<>());
-        }
-        throw new UsernameNotFoundException("Invalid username");
-    }
+    @Override
+	@Transactional
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		PollUserDTO pollUser = pollUserService.getPollUser(username);
+        if(pollUser == null) throw new UsernameNotFoundException("User Not Found with username: " + username);
+
+		return JwtUserImpl.build(pollUser);
+	}
 }

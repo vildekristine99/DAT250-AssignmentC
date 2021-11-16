@@ -17,7 +17,9 @@ public class PollUserService {
     private PollUserRepository pollUserRepository;
 
    
-
+    public boolean PollUserExists(String username) {
+        return pollUserRepository.existsByUsername(username);
+    }
     public PollUser addPollUser(PollUser pollUser) {
         return pollUserRepository.save(pollUser);
     }

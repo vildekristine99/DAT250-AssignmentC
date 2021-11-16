@@ -19,7 +19,7 @@ export default function Routes(props) {
           <Header text="Log in" link="/#/login"/>
           <EnterPin />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Header text="Go back" link="/"/>
           <LoginComponent />
         </Route>

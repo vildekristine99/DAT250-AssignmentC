@@ -1,11 +1,12 @@
 import axios from 'axios'
-
-const POLLUSER_REST_API = 'http://localhost:8080/users';
+import authHeader from './auth-header'
+//const POLLUSER_REST_API = 'http://localhost:8080/users';
+const API_URL = 'http://localhost:8080/api/test/';
 
 class PollUserService {
 
-    getPollUsers() {
-        return axios.get(POLLUSER_REST_API);
+    getPollUsersBoard() {
+        return axios.get(API_URL + 'user', { headers: authHeader() });
     }
 }
 

@@ -8,7 +8,7 @@ public class WebController {
 
     @GetMapping(value = "/frontend")
     public String home() {
-        return "index.html";
+        return "index";
     }
-
 }
+*/
