@@ -7,6 +7,10 @@ public interface PollUserRepository extends CrudRepository<PollUser, Long> {
 
     PollUser findByUserId(Long userId);
 
+    PollUser deleteByUserId(Long userId);
+
+    PollUser findByUsername(String username);
+
 
 /*
     boolean existsByUserId(Long userId);

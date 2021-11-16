@@ -13,9 +13,7 @@ public class Vote {
 
     private boolean value;
 
-    public Vote () {
-
-    }
+    public Vote () {}
 
     public Vote(Long voteId, Poll poll, boolean value) {
         this.voteId = voteId;

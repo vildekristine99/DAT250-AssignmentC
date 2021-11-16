@@ -1,13 +1,29 @@
 package no.hvl.dat250.Votesphere.DTO;
 
-import no.hvl.dat250.Votesphere.Entities.Poll;
-import java.util.List;
+
 
 public class PollUserDTO {
     private Long userId;
     private String username;
     private String firstname;
     private String lastname;
+	private String password;
+
+    public PollUserDTO(Long userId, String username, String firstname, String lastname, String password) {
+        this.userId = userId;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
+    }
+
+    public PollUserDTO(){
+
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     public Long getUserId() {
         return userId;

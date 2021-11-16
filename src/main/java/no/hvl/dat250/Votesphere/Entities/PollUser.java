@@ -14,9 +14,18 @@ public class PollUser {
     private String lastname;
     private String password;
 
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval=true, mappedBy = "pollUser")
     private Set<Poll> polls = new HashSet<>();
+
+    public PollUser() {}
+
+    public PollUser(Long userId, String username, String firstname, String lastname, String password) {
+        this.userId = userId;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
+    }
 
     public void addPoll(Poll poll) {
         polls.add(poll);

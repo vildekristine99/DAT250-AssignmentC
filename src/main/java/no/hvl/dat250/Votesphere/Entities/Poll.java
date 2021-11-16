@@ -18,6 +18,14 @@ public class Poll {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval=true, mappedBy = "poll")
     private Set<Vote> votes = new HashSet<Vote>();
 
+    public Poll() { }
+
+    public Poll(Long pollId, String pollName, boolean isPublic) {
+        this.pollId = pollId;
+        this.pollName = pollName;
+        this.isPublic = isPublic;
+    }
+
     public void addVote(Vote vote){
         votes.add(vote);
     }

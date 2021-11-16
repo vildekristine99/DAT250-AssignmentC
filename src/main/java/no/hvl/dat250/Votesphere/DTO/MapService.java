@@ -8,7 +8,7 @@ import no.hvl.dat250.Votesphere.Repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
-import no.hvl.dat250.Votesphere.Entities.PollUser;
+
 import java.util.stream.Collectors;
 
 @Service
@@ -23,6 +23,7 @@ public class MapService {
     @Autowired
     private VoteRepository voteRepository;
 
+    //PollUsers
     public List<PollUserDTO> getAllPollUsers() {
         return ((List<PollUser>) pollUserRepository
                 .findAll())
@@ -48,6 +49,8 @@ public class MapService {
         return pollUserDTO;
     }
 
+
+    //Polls
     public List<PollDTO> getAllPolls() {
         return ((List<Poll>) pollRepository
                 .findAll())
@@ -73,6 +76,15 @@ public class MapService {
                 .collect(Collectors.toList());
     }
 
+    public List<PollDTO> getPollbyUsername(String username) {
+        return ((List<Poll>) pollRepository
+                .findAll())
+                .stream()
+                .filter(p -> p.getPollUser().getUsername() == username)
+                .map(this::convertToPollDTO)
+                .collect(Collectors.toList());
+    }
+
     private PollDTO convertToPollDTO(Poll poll) {
         PollDTO pollDTO = new PollDTO();
         pollDTO.setPollId(poll.getPollId());
@@ -83,4 +95,7 @@ public class MapService {
         pollDTO.setNoVotes(poll.getVotes().stream().filter(v -> v.getValue() == false).count());
         return pollDTO;
     }
+
+
+
 }
