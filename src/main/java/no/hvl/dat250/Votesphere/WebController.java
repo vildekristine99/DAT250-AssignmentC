@@ -1,15 +1,17 @@
 package no.hvl.dat250.Votesphere;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-/*
-@Controller
-public class WebController {
+import org.springframework.web.bind.annotation.RestController;
 
-    @GetMapping(value = "frontend")
-    public String home() {
+@CrossOrigin(origins = "http://localhost:8080", maxAge = 3600)
+@RestController
+@RequestMapping("/#")
+public class WebController {
+    @GetMapping("/login")
+    public String allAccess() {
         return "index";
     }
 }
-*/

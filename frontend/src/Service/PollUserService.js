@@ -8,6 +8,10 @@ class PollUserService {
     getPollUsersBoard() {
         return axios.get(API_URL + 'user', { headers: authHeader() });
     }
+
+    getLoginContent() {
+        return axios.get(API_URL + 'all');
+    }
 }
 
 export default new PollUserService();
