@@ -12,7 +12,7 @@ import no.hvl.dat250.Votesphere.DTO.PollDTO;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class UserController {
 
@@ -41,29 +41,29 @@ public class UserController {
         }
     }
 
-  /* @PutMapping("/users/{id}")
-    public ResponseEntity<PollUser> updatePollUser(@RequestBody PollUser newPollUser, @PathVariable Long id) {
-        try {
-            return new ResponseEntity<>(pollUserRepository.findById(id)
-                    .map(pollUser -> {
-                        pollUser.setUsername(newPollUser.getUsername());
-                        pollUser.setFirstname(newPollUser.getFirstname());
-                        pollUser.setLastname(newPollUser.getLastname());
-                        // make update
-                        return pollUserRepository.save(pollUser)
-                    })
-                    .orElseGet(() -> {
-                        newPollUser.setId(id);
-                        return pollUserRepository.save(newPollUser);
-                    }), HttpStatus.OK);
+    /* @PutMapping("/users/{id}")
+      public ResponseEntity<PollUser> updatePollUser(@RequestBody PollUser newPollUser, @PathVariable Long id) {
+          try {
+              return new ResponseEntity<>(pollUserRepository.findById(id)
+                      .map(pollUser -> {
+                          pollUser.setUsername(newPollUser.getUsername());
+                          pollUser.setFirstname(newPollUser.getFirstname());
+                          pollUser.setLastname(newPollUser.getLastname());
+                          // make update
+                          return pollUserRepository.save(pollUser)
+                      })
+                      .orElseGet(() -> {
+                          newPollUser.setId(id);
+                          return pollUserRepository.save(newPollUser);
+                      }), HttpStatus.OK);
 
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+          } catch (Exception e) {
+              return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 
-        }
+          }
 
-    }
-*/
+      }
+  */
     @PostMapping("/register")
     public ResponseEntity<PollUser> newPollUser(@RequestBody PollUser newUser) {
         try {
@@ -85,19 +85,19 @@ public class UserController {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-     }
+    }
 
     @GetMapping("/mypolls/{id}")
     public ResponseEntity<List<PollDTO>> getPollsByUser(@PathVariable Long id) {
 
         try {
-        List<PollDTO> polls = mapService.getPollbyUser(id);
+            List<PollDTO> polls = mapService.getPollbyUser(id);
 
-        if (polls.isEmpty()) {
-            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
-        }
+            if (polls.isEmpty()) {
+                return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+            }
 
-        return new ResponseEntity<>(polls, HttpStatus.OK);
+            return new ResponseEntity<>(polls, HttpStatus.OK);
 
         } catch(Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

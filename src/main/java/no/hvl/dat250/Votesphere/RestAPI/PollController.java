@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import no.hvl.dat250.Votesphere.DTO.MapService;
 
+
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class PollController {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AuthenticationService from './AuthenticationService.js';
+import AuthService from '../../Service/auth.service.js';
 
 import {withRouter} from 'react-router-dom';
 
@@ -18,7 +18,7 @@ class LoginComponent extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.loginClicked = this.loginClicked.bind(this)
     }
-   
+
 
     handleChange(event) {
         this.setState(
@@ -30,33 +30,13 @@ class LoginComponent extends Component {
     }
 
     loginClicked() {
-        
-            /*if(this.state.username==='in28minutes' && this.state.password==='dummy'){
-                this.props.history.push('/userHome')
-                //this.setState({showSuccessMessage:true})
-                //this.setState({hasLoginFailed:false})
-            }
-            else {
-                this.setState({showSuccessMessage:false})
-                this.setState({hasLoginFailed:true})
-            }
-            */
-            AuthenticationService
-                .executeBasicAuthenticationService(this.state.username, this.state.password)
-                .then(() => {
-                    AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
-                    this.props.history.push('/userHome')
-                }).catch(() => {
-                    this.setState({ showSuccessMessage: false })
-                    this.setState({ hasLoginFailed: true })
-                })
-            
-        
+        AuthService.login(this.state.username, this.state.password)
+            .then(value => console.log("Login successful: ", value))
     }
 
     render() {
         return (
-            
+
             <div>
                 <div className="inputDiv">
 
@@ -64,9 +44,9 @@ class LoginComponent extends Component {
                     <input type="text" placeholder="Username" name="username" onChange={this.handleChange}/>
                     <input type="password" placeholder="Password" name="password" onChange={this.handleChange}/>
                     <button className="loginButton" onClick={this.loginClicked}>Log in</button>
-                <p>Don't have an account? 
-                    <a href="/#/register" className = "loginReg">Register</a>
-                </p>
+                    <p>Don't have an account?
+                        <a href="/#/register" className = "loginReg">Register</a>
+                    </p>
                 </div>
             </div>
         )
