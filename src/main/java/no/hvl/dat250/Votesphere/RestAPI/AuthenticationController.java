@@ -1,4 +1,4 @@
-package no.hvl.dat250.Votesphere.Security;
+package no.hvl.dat250.Votesphere.RestAPI;
 
 import javax.validation.Valid;
 
