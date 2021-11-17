@@ -1,12 +1,8 @@
 package no.hvl.dat250.Votesphere.DTO;
 
 import org.springframework.stereotype.Service;
-
 import no.hvl.dat250.Votesphere.Entities.Poll;
 import no.hvl.dat250.Votesphere.Repository.PollRepository;
-import no.hvl.dat250.Votesphere.Repository.PollUserRepository;
-import no.hvl.dat250.Votesphere.DTO.PollUserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
@@ -14,8 +10,7 @@ public class PollService {
     @Autowired
     private PollRepository pollRepository;
 
-    @Autowired
-    private PollUserRepository pollUserRepository;
+  
 
     public Poll addPoll(Poll poll) {
 

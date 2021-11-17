@@ -4,7 +4,6 @@ import no.hvl.dat250.Votesphere.Entities.PollUser;
 import no.hvl.dat250.Votesphere.Entities.Poll;
 import no.hvl.dat250.Votesphere.Repository.PollRepository;
 import no.hvl.dat250.Votesphere.Repository.PollUserRepository;
-import no.hvl.dat250.Votesphere.Repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -20,8 +19,6 @@ public class MapService {
     @Autowired
     private PollUserRepository pollUserRepository;
 
-    @Autowired
-    private VoteRepository voteRepository;
 
     //PollUsers
     public List<PollUserDTO> getAllPollUsers() {

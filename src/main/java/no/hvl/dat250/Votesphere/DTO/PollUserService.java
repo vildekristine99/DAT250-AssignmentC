@@ -2,9 +2,7 @@ package no.hvl.dat250.Votesphere.DTO;
 
 import no.hvl.dat250.Votesphere.Entities.PollUser;
 
-import no.hvl.dat250.Votesphere.Repository.PollRepository;
 import no.hvl.dat250.Votesphere.Repository.PollUserRepository;
-import no.hvl.dat250.Votesphere.Repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
