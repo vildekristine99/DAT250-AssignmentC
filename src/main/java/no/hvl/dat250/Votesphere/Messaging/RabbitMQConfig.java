@@ -1,5 +1,5 @@
 package no.hvl.dat250.Votesphere.Messaging;
-
+/*
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 
-/*
+
 
 
 @Configuration
