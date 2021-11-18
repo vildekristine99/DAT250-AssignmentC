@@ -1,5 +1,31 @@
 import React from "react";
+import AuthService from "../Service/auth.service.js";
+import { useEffect, useState } from "react";
 
+const UserPolls = () => {
+  const [pollArray, setPollArray] = useState([]);
+
+  useEffect(() => {
+    setPollArray(AuthService.getCurrentUser().polls);
+    console.log(pollArray);
+  }, []);
+
+  const checkPolls = () => {};
+
+  return (
+    <div>
+      {!!pollArray.length && (
+        <div className="inputDiv">
+          {pollArray.map((value, index) => {
+            return <p key={index}>{value.pollName}</p>;
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
+/*
 class UserPolls extends React.Component {
     
     constructor(props) {
@@ -11,6 +37,10 @@ class UserPolls extends React.Component {
 
         this.handleChange = this.handleChange.bind(this)
         this.publishButtonClicked = this.publishButtonClicked.bind(this)
+    }
+
+    /*receivePolls() {
+        AuthService.getCurrentUser().
     }
    
 
@@ -34,13 +64,13 @@ class UserPolls extends React.Component {
             <div className="inputDiv">
                 <p>My polls</p>
         
-                <button className="blackButton">{/* {poll.name} */}</button>
+                <button className="blackButton">{ {poll.name} }</button>
                 
                 <p>Go back</p>
             </div>
         );
     }
     
-}
+}*/
 
 export default UserPolls;
