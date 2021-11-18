@@ -22,6 +22,10 @@ class PollService {
     getCurrentPoll() {
         return JSON.parse(localStorage.getItem('poll'));
     }
+
+    closePoll() {
+        localStorage.removeItem("poll");
+    }
     
 }
 

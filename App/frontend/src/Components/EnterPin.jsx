@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PollUserService from "../Service/PollUserService.js";
 import PollUsers from "../API/PollUsers.js";
 import PollService from "../Service/PollService.js";
@@ -9,6 +9,10 @@ import { useHistory } from "react-router";
 const EnterPin = () => {
   const [pin, setPin] = useState("");
   const history = useHistory();
+
+  useEffect(() => {
+    PollService.closePoll();
+  }, []);
 
   const buttonClicked = () => {
     PollService.getPoll(pin);

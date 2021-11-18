@@ -14,8 +14,9 @@ const ViewPoll = () => {
       console.log(pollId);
     }, []);
 
-    const postVote = (vote) => {
-      VoteService.addVote(pollId, vote);
+    const postVote = (props) => {
+      console.log(props)
+      VoteService.addVote(pollId, props);
       
     }
  
@@ -24,11 +25,11 @@ const ViewPoll = () => {
       <div className="viewPoll">
         <p>{pollname}</p>
         <div className="btns-wrapper">
-          <button className="btns" value="true" name="vote" onClick={postVote()}> Yes </button>
-          <button className="btns" value="false" name="vote" onClick={postVote()}>No </button>
+          <button className="btns" value="true" name="yes" onClick={() => {postVote(true)}}> Yes </button>
+          <button className="btns" value="false" name="no" onClick={() => {postVote(false)}}>No </button>
         </div>
       </div>
-      <a href="/#/userPolls" className="loginReg">
+      <a href="/#" className="loginReg">
         Go back
       </a>
     </div>
