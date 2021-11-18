@@ -15,6 +15,7 @@ const UserHome = ({ props }) => {
 
   const handleClick = () => {
     history.push("/userPolls");
+    console.log(pollArray);
     window.location.reload();
   };
 
