@@ -1,5 +1,9 @@
 package no.hvl.dat250.Votesphere.Payload.response;
 
+import java.util.List;
+
+import no.hvl.dat250.Votesphere.DTO.PollDTO;
+import no.hvl.dat250.Votesphere.Entities.Poll;
 
 public class JwtResponse {
 	private String token;
@@ -8,15 +12,24 @@ public class JwtResponse {
 	private String username;
     private String firstname;
     private String lastname;
+	private List<PollDTO> polls;
 
-	public JwtResponse(String accessToken, Long id, String username, String firstname, String lastname) {
+	public JwtResponse(String accessToken, Long id, String username, String firstname, String lastname, List<PollDTO> polls) {
 		this.token = accessToken;
 		this.id = id;
 		this.username = username;
 		this.firstname = firstname;
         this.lastname = lastname;
+		this.polls = polls;
 	}
 
+	public List<PollDTO> getPolls() {
+		return polls;
+	}
+
+	public void setPolls(List<PollDTO> polls) {
+		this.polls = polls;
+	}
 	public String getAccessToken() {
 		return token;
 	}

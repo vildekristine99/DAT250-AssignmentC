@@ -1,5 +1,7 @@
 package no.hvl.dat250.Votesphere.RestAPI;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import no.hvl.dat250.Votesphere.Security.Services.JwtUserImpl;
+import no.hvl.dat250.Votesphere.DTO.MapService;
+import no.hvl.dat250.Votesphere.DTO.PollDTO;
 import no.hvl.dat250.Votesphere.DTO.PollService;
 import no.hvl.dat250.Votesphere.DTO.PollUserService;
 import no.hvl.dat250.Votesphere.Entities.PollUser;
@@ -34,6 +38,9 @@ public class AuthenticationController {
 
 	@Autowired
 	PollUserService pollUserService;
+
+	@Autowired
+	MapService mapService;
 
 	@Autowired
 	PollService pollService;
@@ -55,12 +62,14 @@ public class AuthenticationController {
 
 		JwtUserImpl userDetails = (JwtUserImpl) authentication.getPrincipal();
 
+		List<PollDTO> polls = mapService.getPollbyUser(userDetails.getUserId());
 
 		return ResponseEntity.ok(new JwtResponse(jwt,
 				userDetails.getUserId(),
 				userDetails.getUsername(),
 				userDetails.getFirstname(),
-				userDetails.getLastname()));
+				userDetails.getLastname(),
+				polls));
 	}
 
 	@PostMapping("/signup")
