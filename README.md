@@ -1,24 +1,7 @@
-## IoT Device for the DAT250 project
+# Poll app project DAT250
 
-Running the API on localhost?
-- Turn off CORS
+### Project description
 
-Crossplatform for Android, iOS and Web
+## Technology stack
 
-Web:
-- flutter config --enable-web
-- flutter run -d chrome
-
-Android:
-- flutter run -d android
-
-iOS:
-- flutter run -d ios
-
-If these commands results in an error like:
-- No devices found with name or matching id
-
-The you gotta specify the id for the device:
-- flutter devices
-- find the id of the device in the list
-- flutter run -d "device-id"
+## IoT
