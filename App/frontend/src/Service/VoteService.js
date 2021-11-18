@@ -14,10 +14,7 @@ class VoteService {
         vote
       });
     }
-//to pollservice
-    getCurrentPoll() {
-        return JSON.parse(localStorage.getItem('poll'));
-    }
+
 }
 
 export default new VoteService();
