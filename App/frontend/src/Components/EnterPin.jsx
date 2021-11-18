@@ -11,15 +11,10 @@ const EnterPin = () => {
   const history = useHistory();
 
   const buttonClicked = () => {
+    PollService.getPoll(pin);
     history.push({
-      pathname: "/viewPoll",
-      state: PollService.getPoll(pin),
-    });
+      pathname: "/viewPoll"});
     window.location.reload();
-  };
-
-  const buttonCheck = () => {
-    history.push("/viewPoll");
   };
 
   return (
@@ -32,7 +27,7 @@ const EnterPin = () => {
         onInput={(e) => setPin(e.target.value)}
         placeholder="Enter pin..."
       />
-      <button className="loginButton" onClick={() => buttonCheck()}>
+      <button className="loginButton" onClick={() => buttonClicked()}>
         Enter pin
       </button>
     </div>

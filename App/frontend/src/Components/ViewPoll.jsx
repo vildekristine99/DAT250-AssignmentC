@@ -8,7 +8,7 @@ const ViewPoll = () => {
     const [pollId, setPollId] = useState();
 
     useEffect(() => {
-      setPollname(PollService.getCurrentPoll().name);
+      setPollname(PollService.getCurrentPoll().pollName);
       console.log(pollname);
       setPollId(PollService.getCurrentPoll().pollId);
       console.log(pollId);
