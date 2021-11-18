@@ -88,7 +88,7 @@ public class PollController {
         }
     }
 
-    @PostMapping("/vote")
+    @PostMapping("/vote/newVote")
     public ResponseEntity<Vote> newVote(@RequestBody Vote vote) {
 
         try {

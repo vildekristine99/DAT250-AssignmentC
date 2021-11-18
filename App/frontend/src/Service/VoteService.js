@@ -8,7 +8,16 @@ class VoteService {
         return axios.get(API_URL, { headers: authHeader() });
     }
 
-    
+    addVote(pollId, vote){
+        return axios.post(API_URL + "newVote", {
+        pollId,
+        vote
+      });
+    }
+//to pollservice
+    getCurrentPoll() {
+        return JSON.parse(localStorage.getItem('poll'));
+    }
 }
 
 export default new VoteService();

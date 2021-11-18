@@ -1,22 +1,38 @@
 import React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import PollService from "../Service/PollService";
+import VoteService from "../Service/VoteService";
 
-const ViewPoll = ({poll, vote}) => {
-    const [vote, setVote] = useState();
+const ViewPoll = () => {
+    const [pollname, setPollname] = useState();
+    const [pollId, setPollId] = useState();
 
-    handleClick = (voteResult) => {
-        setVote(voteResult);
-        this.props.history.push('/pollResult')
+    useEffect(() => {
+      setPollname(PollService.getCurrentPoll().name);
+      console.log(pollname);
+      setPollId(PollService.getCurrentPoll().pollId);
+      console.log(pollId);
+    }, []);
+
+    const postVote = (vote) => {
+      VoteService.addVote(pollId, vote);
+      
     }
-
+ 
     return (
-    <div className="inputDiv">
-        <h2>{poll.getPollName}</h2>
-        <p>Du stemte {vote}</p>
-        <p>Ja stemmer: {poll.yesVotes}</p>
-        <p>Nei stemmer: {poll.noVotes}</p>
+      <div className="inputDiv">
+      <div className="viewPoll">
+        <p>{pollname}</p>
+        <div className="btns-wrapper">
+          <button className="btns" value="true" name="vote" onClick={postVote()}> Yes </button>
+          <button className="btns" value="false" name="vote" onClick={postVote()}>No </button>
+        </div>
+      </div>
+      <a href="/#/userPolls" className="loginReg">
+        Go back
+      </a>
     </div>
     );
 }
 
-export default PollResult;
+export default ViewPoll;

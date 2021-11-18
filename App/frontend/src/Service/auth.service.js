@@ -35,6 +35,8 @@ class AuthService {
     return JSON.parse(localStorage.getItem('user'));
   }
 
+
+
   isUserNotLoggedin(){
     console.log(localStorage.getItem('user'));
     return (localStorage.getItem('user') === null);
