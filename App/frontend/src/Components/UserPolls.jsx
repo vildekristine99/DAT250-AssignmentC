@@ -32,7 +32,7 @@ const UserPolls = () => {
   const handleClick = (value) => {
     console.log(value);
     history.push({
-      pathname: "/viewPoll",
+      pathname: "/pollResult",
       state: value,
     });
     //history.push("/viewPoll", value);

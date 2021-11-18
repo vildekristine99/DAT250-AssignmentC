@@ -72,7 +72,7 @@ public class PollController {
     }
 
     //Vet ikke hvordan vi skal gjøre dette
-    @GetMapping("/pollresult/{id}/") // kanskje noe / id her?
+    @GetMapping("/vote/result/{id}") // kanskje noe / id her?
     public ResponseEntity<Set<Vote>> voteResult(@PathVariable Long id) {
 
         try {

@@ -1,22 +1,42 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { useLocation } from "react-router";
 
-const PollResult = ({poll, vote}) => {
-    const [vote, setVote] = useState();
+const PollResult = () => {
+  const location = useLocation();
+  const [poll, setPoll] = useState([]);
 
+  useEffect(() => {
+    setPoll(location.state);
+    console.log(poll);
+  }, [location]);
+  /*
     handleClick = (voteResult) => {
         setVote(voteResult);
         this.props.history.push('/pollResult')
-    }
+    }*/
 
-    return (
+  //<h2>{poll.pollName}</h2>
+  /*
+    <button className="whiteButton" onClick={() => this.handleClick("yes")}>Yes</button>
+        <button className="whiteButton" onClick={() => this.handleClick("no")}>No</button>
+    */
+
+  return (
     <div className="inputDiv">
-        <h2>{poll.getPollName}</h2>
-        <p>Du stemte {vote}</p>
-        <p>Ja stemmer: {poll.yesVotes}</p>
-        <p>Nei stemmer: {poll.noVotes}</p>
+      <div className="pollresult">
+        <p>{poll.pollName}</p>
+        <div className="btns-wrapper">
+          <button className="btns">Yes votes: {poll.yesVotes}</button>
+          <button className="btns">No votes: {poll.noVotes}</button>
+        </div>
+      </div>
+      <a href="/#/userPolls" className="loginReg">
+        Go back
+      </a>
     </div>
-    );
-}
+  );
+};
 
 export default PollResult;

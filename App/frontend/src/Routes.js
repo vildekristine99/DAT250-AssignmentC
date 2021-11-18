@@ -8,7 +8,7 @@ import PublishPoll from "./Components/PublishPoll.jsx";
 import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";
 import LoginComponent from "./Components/Security/LoginComponent.jsx";
-//import ViewPoll from "./Components/ViewPoll.jsx";
+import ViewPoll from "./Components/ViewPoll.jsx";
 import AuthenticatedRoutes from "./AuthenticatedRoutes.js"
 
 
