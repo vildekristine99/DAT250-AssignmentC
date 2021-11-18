@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import no.hvl.dat250.Votesphere.DTO.MapService;
+//import no.hvl.dat250.Votesphere.Messaging.Send;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
