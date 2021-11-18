@@ -3,30 +3,18 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header.jsx";
 import Register from "./Components/Register.jsx";
 import EnterPin from './Components/EnterPin.jsx';
-import Login from './Components/Login.jsx';
+//import Login from './Components/Login.jsx';
 import PublishPoll from "./Components/PublishPoll.jsx";
 import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";
 import LoginComponent from "./Components/Security/LoginComponent.jsx";
-import ViewPoll from "./Components/ViewPoll.jsx";
-import AuthService from "./Service/auth.service.js";
-/*
-class AuthenticatedRoutes extends React.Component {
-  render() {
-      if (AuthService.getCurrentUser().accessToken !== null) {
-          return <Route {...this.props} />
-      } else {
-          return <Redirect to="/login" />
-      }
-
-  }
-}*/
-
+//import ViewPoll from "./Components/ViewPoll.jsx";
+import AuthenticatedRoutes from "./AuthenticatedRoutes.js"
 
 
 
 class Routes extends React.Component {
-
+  
 
   render() {
     return (
@@ -43,10 +31,10 @@ class Routes extends React.Component {
           <Header  text="Log in" link="/#/login"/> 
           <Register />
         </Route>
-        <Route path="/publishPoll">
+        <AuthenticatedRoutes path="/publishPoll">
           <Header  text="Go back" link="/#/userHome"/>
           <PublishPoll />
-        </Route>
+        </AuthenticatedRoutes>
         <Route path="/userHome">
           <Header  text="Log out" link="/"/>
           <UserHome />
