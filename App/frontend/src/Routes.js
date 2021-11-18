@@ -10,6 +10,7 @@ import UserPolls from "./Components/UserPolls.jsx";
 import LoginComponent from "./Components/Security/LoginComponent.jsx";
 import ViewPoll from "./Components/ViewPoll.jsx";
 import AuthenticatedRoutes from "./AuthenticatedRoutes.js"
+import PollResult from "./Components/PollResult.jsx";
 
 
 
@@ -46,6 +47,10 @@ class Routes extends React.Component {
         <Route path="/viewPoll">
           <Header text="Log out" link="/#/viewPoll"/>
           <ViewPoll />
+        </Route>
+        <Route path="/pollResult">
+          <Header text="Log out" link="/#/pollResult"/>
+          <PollResult />
         </Route>
       </Switch>
     );
