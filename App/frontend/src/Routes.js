@@ -7,12 +7,11 @@ import Login from './Components/Login.jsx';
 import PublishPoll from "./Components/PublishPoll.jsx";
 import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";
-import AuthenticatedRoute from "./Components/Security/AuthenticatedRoute.jsx"
 import LoginComponent from "./Components/Security/LoginComponent.jsx";
 import ViewPoll from "./Components/ViewPoll.jsx";
 import AuthService from "./Service/auth.service.js";
-
-class AuthenticatedRoute extends Component {
+/*
+class AuthenticatedRoutes extends React.Component {
   render() {
       if (AuthService.getCurrentUser().accessToken !== null) {
           return <Route {...this.props} />
@@ -21,9 +20,9 @@ class AuthenticatedRoute extends Component {
       }
 
   }
-}
+}*/
 
-export default AuthenticatedRoute;
+
 
 
 class Routes extends React.Component {
@@ -44,10 +43,10 @@ class Routes extends React.Component {
           <Header  text="Log in" link="/#/login"/> 
           <Register />
         </Route>
-        <AuthenticatedRoute path="/publishPoll">
+        <Route path="/publishPoll">
           <Header  text="Go back" link="/#/userHome"/>
           <PublishPoll />
-        </AuthenticatedRoute>
+        </Route>
         <Route path="/userHome">
           <Header  text="Log out" link="/"/>
           <UserHome />
