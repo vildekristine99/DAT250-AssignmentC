@@ -52,8 +52,6 @@ class PublishPoll extends React.Component {
         
             );
     }
-    
-
 }
 
 export default PublishPoll; 

@@ -25,7 +25,7 @@ const PollResult = () => {
 
   return (
     <div className="inputDiv">
-      <div className="pollresult">
+      <div className="viewpoll">
         <p>{poll.pollName}</p>
         <div className="btns-wrapper">
           <button className="btns">Yes votes: {poll.yesVotes}</button>

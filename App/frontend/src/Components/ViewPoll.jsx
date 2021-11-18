@@ -32,7 +32,7 @@ const ViewPoll = () => {
         Go back
       </a>
     </div>
-    );
-}
+  );
+};
 
 export default ViewPoll;
