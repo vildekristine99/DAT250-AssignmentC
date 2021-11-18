@@ -3,7 +3,6 @@ package no.hvl.dat250.Votesphere.Payload.response;
 import java.util.List;
 
 import no.hvl.dat250.Votesphere.DTO.PollDTO;
-import no.hvl.dat250.Votesphere.Entities.Poll;
 
 public class JwtResponse {
 	private String token;

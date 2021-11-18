@@ -16,6 +16,7 @@ import no.hvl.dat250.Votesphere.DTO.MapService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
+@RequestMapping("/api")
 public class PollController {
 
     @Autowired
