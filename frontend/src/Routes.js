@@ -9,7 +9,7 @@ import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";
 import AuthenticatedRoute from "./Components/Security/AuthenticatedRoute.jsx"
 import LoginComponent from "./Components/Security/LoginComponent.jsx";
-import ViewPoll from "./Components/ViewPoll.jsx";
+import ViewPoll from "./Components/ViewPoll.jsx"
 
 export default function Routes(props) {
 
