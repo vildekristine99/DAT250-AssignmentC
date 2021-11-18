@@ -31,7 +31,12 @@ class LoginComponent extends Component {
 
     loginClicked() {
         AuthService.login(this.state.username, this.state.password)
-            .then(value => console.log("Login successful: ", value))
+            .then(
+                () => {
+                    this.props.history.push("/userHome");
+                    window.location.reload();
+                  },
+                value => console.log("Login successful: ", value))
     }
 
     render() {
