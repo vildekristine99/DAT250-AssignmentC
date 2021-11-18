@@ -1,6 +1,7 @@
 import React from "react";
 import AuthService from "../Service/auth.service.js";
 import { useEffect, useState } from "react";
+import lineImage from "../logos/userPollsLine.svg";
 
 const UserPolls = () => {
   const [pollArray, setPollArray] = useState([]);
@@ -10,17 +11,34 @@ const UserPolls = () => {
     console.log(pollArray);
   }, []);
 
-  const checkPolls = () => {};
+  const checkPolls = () => {
+    if (pollArray.length > 0) {
+      return (
+        <div>
+          <img src={lineImage} class="imageline1" alt="line" />
+          <p>My polls</p>
+          <img src={lineImage} class="imageline1" alt="line" />
+        </div>
+      );
+    } else {
+      return <div>You have no polls</div>;
+    }
+  };
 
   return (
-    <div>
+    <div className="inputDiv">
+      {checkPolls}
+
       {!!pollArray.length && (
-        <div className="inputDiv">
+        <div className="poll">
           {pollArray.map((value, index) => {
             return <p key={index}>{value.pollName}</p>;
           })}
         </div>
       )}
+      <a href="/#/userHome" className="loginReg">
+        Go back
+      </a>
     </div>
   );
 };

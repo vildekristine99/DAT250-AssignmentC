@@ -1,13 +1,12 @@
-/** Design for Votesphere **/ 
+/** Design for Votesphere **/
 @import "variables";
-
 
 body {
   background-color: $lightblue;
   box-sizing: border-box;
 }
 
-*{
+* {
   font-family: Sora;
 }
 
@@ -18,8 +17,4 @@ body {
 @import "loginregister";
 @import "userhome";
 @import "publishpoll";
-
-
-
-
-
+@import "userpolls";

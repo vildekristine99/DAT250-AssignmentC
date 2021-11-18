@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Thu Nov 18 15:51:15 CET 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017d-3387-c3f8-000001bba500 
-on database directory C:\Users\hsm20\IdeaProjects\Votesphere\mydbdirectory with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
-Loaded from file:/C:/Users/hsm20/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Thu Nov 18 16:16:27 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017d-339e-d4c4-000001c514b0 
+on database directory /Users/KathrineH/DAT250-AssignmentC/App/mydbdirectory with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@7ad041f3 
+Loaded from file:/Users/KathrineH/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=12.0.2+10
-user.dir=C:\Users\hsm20\IdeaProjects\Votesphere
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
+java.runtime.version=16.0.2+7-67
+user.dir=/Users/KathrineH/DAT250-AssignmentC/App
+os.name=Mac OS X
+os.arch=x86_64
+os.version=11.5
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
