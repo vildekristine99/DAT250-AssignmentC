@@ -1,5 +1,5 @@
 package no.hvl.dat250.Votesphere.Messaging;
-
+/*
 import no.hvl.dat250.Votesphere.DTO.*;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,4 +22,4 @@ public class Send {
         rabbitTemplate.convertAndSend(exchange, routingkey, poll);
         System.out.println("Send message " + poll);
     }
-}
+}*/
