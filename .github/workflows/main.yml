@@ -18,6 +18,8 @@ jobs:
           java-version: 11
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
+        env:
+          CI: false
         working-directory: App
   deploy:
     needs: build
