@@ -22,7 +22,7 @@ const ViewPoll = () => {
  
     return (
       <div className="inputDiv">
-      <div className="viewPoll">
+      <div className="viewpoll">
         <p>{pollname}</p>
         <div className="btns-wrapper">
           <button className="btns" value="true" name="yes" onClick={() => {postVote(true)}}> Yes </button>

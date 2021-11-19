@@ -19,9 +19,15 @@ const UserHome = ({ props }) => {
     window.location.reload();
   };
 
+  const handleClick2 = () => {
+    history.push("/publishPoll");
+    console.log(pollArray);
+    window.location.reload();
+  };
+
   return (
     <div className="inputDiv">
-      <button className="whiteButton">Create Polls</button>
+      <button className="whiteButton" onClick={handleClick2}>Create Polls</button>
       <button className="whiteButton" onClick={handleClick}>
         My Polls
       </button>
