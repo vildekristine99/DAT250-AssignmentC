@@ -4,5 +4,5 @@ import Register from "./Components/Register.jsx";
 
 test('renders register', () => {
     render(<Register />);
-    expect(screen.getByText(/register)).toBeInTheDocument();
+    expect(screen.getByText("Create a user!")).toBeInTheDocument();
 });
