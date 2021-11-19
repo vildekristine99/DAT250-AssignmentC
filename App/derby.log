@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Nov 18 21:30:32 CET 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017d-34be-6326-000001db12e8 
-on database directory C:\Users\hsm20\IdeaProjects\Votesphere\App\mydbdirectory with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
-Loaded from file:/C:/Users/hsm20/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Fri Nov 19 06:42:37 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017d-36b7-d573-0000049089c0 
+on database directory C:\Users\hvika\Desktop\DAT250_prosjekt\DAT250-AssignmentC\App\mydbdirectory with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/hvika/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=12.0.2+10
-user.dir=C:\Users\hsm20\IdeaProjects\Votesphere\App
+java.runtime.version=15.0.2+7-27
+user.dir=C:\Users\hvika\Desktop\DAT250_prosjekt\DAT250-AssignmentC\App
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
