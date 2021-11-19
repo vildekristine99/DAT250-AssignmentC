@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import Register from "./Components/Register.jsx";
 
-test('renders register', () => {
-    render(<Register />);
-    expect(screen.getByText("Create a user!")).toBeInTheDocument();
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
 });
