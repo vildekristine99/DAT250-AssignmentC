@@ -5,6 +5,7 @@ import java.util.Set;
 import no.hvl.dat250.Votesphere.DTO.PollDTO;
 import no.hvl.dat250.Votesphere.Entities.Poll;
 import no.hvl.dat250.Votesphere.Entities.Vote;
+import no.hvl.dat250.Votesphere.Messaging.Send;
 import no.hvl.dat250.Votesphere.Repository.PollRepository;
 import no.hvl.dat250.Votesphere.Repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class PollController {
     @Autowired
     private MapService mapService;
 
+    @Autowired
+    Send rabbitMQSender;
+
     @GetMapping("/polls")
     @ResponseBody
     public ResponseEntity<List<PollDTO>> getAllPolls() {
@@ -50,6 +54,7 @@ public class PollController {
     public ResponseEntity<Poll> newPoll(@RequestBody Poll newPoll) {
         try{
             Poll poll = pollRepository.save(newPoll);
+            rabbitMQSender.send(newPoll);
             return new ResponseEntity<>(poll, HttpStatus.CREATED);
 
         } catch(Exception e){

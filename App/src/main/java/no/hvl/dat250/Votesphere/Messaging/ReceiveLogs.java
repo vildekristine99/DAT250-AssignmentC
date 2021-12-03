@@ -1,5 +1,5 @@
 package no.hvl.dat250.Votesphere.Messaging; 
-/*
+
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -28,4 +28,3 @@ public class ReceiveLogs {
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
     }
 }
-*/

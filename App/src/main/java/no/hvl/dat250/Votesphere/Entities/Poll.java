@@ -20,8 +20,7 @@ public class Poll {
 
     public Poll() { }
 
-    public Poll(Long pollId, String pollName, boolean isPublic) {
-        this.pollId = pollId;
+    public Poll(String pollName, boolean isPublic) {
         this.pollName = pollName;
         this.isPublic = isPublic;
     }
@@ -54,8 +53,8 @@ public class Poll {
         this.pollName = pollName;
     }
 
-    public void setPublic(boolean aPublic) {
-        isPublic = aPublic;
+    public void setIsPublic(boolean isPublic) {
+        this.isPublic = isPublic;
     }
 
     public void setVotes(Set<Vote> votes) {

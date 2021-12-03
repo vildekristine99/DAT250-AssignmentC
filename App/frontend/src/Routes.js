@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header.jsx";
 import Register from "./Components/Register.jsx";
 import EnterPin from './Components/EnterPin.jsx';
-//import Login from './Components/Login.jsx';
 import PublishPoll from "./Components/PublishPoll.jsx";
 import UserHome from "./Components/UserHome.jsx";
 import UserPolls from "./Components/UserPolls.jsx";

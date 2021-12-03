@@ -23,7 +23,7 @@ public class EntityCreator {
     public Poll createPoll(String pollName, boolean isPublic, PollUser pollUser) {
         Poll poll = new Poll();
         poll.setPollName(pollName);
-        poll.setPublic(isPublic);
+        poll.setIsPublic(isPublic);
         poll.setPollUser(pollUser);
         pollUser.addPoll(poll);
         return poll;

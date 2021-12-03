@@ -11,17 +11,6 @@ const PollResult = () => {
     setPoll(location.state);
     console.log(poll);
   }, [location]);
-  /*
-    handleClick = (voteResult) => {
-        setVote(voteResult);
-        this.props.history.push('/pollResult')
-    }*/
-
-  //<h2>{poll.pollName}</h2>
-  /*
-    <button className="whiteButton" onClick={() => this.handleClick("yes")}>Yes</button>
-        <button className="whiteButton" onClick={() => this.handleClick("no")}>No</button>
-    */
 
   return (
     <div className="inputDiv">

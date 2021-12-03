@@ -26,6 +26,19 @@ class PollService {
     closePoll() {
         localStorage.removeItem("poll");
     }
+
+    createPoll(pollName, isPublic, userId){
+        return axios.post('http://localhost:8080/api/poll', {
+        "pollName":pollName,
+        "isPublic":isPublic,
+        "pollUser":{"userId":userId},
+        "votes":[]
+        });
+    }
+
+    dweetInit(pollName, name) {
+        return axios.post('https://dweet.io/dweet/for/Votesphere?pollName='+pollName+"&creator="+name);
+    }
     
 }
 

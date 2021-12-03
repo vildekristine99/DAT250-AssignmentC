@@ -1,4 +1,7 @@
 import React from "react"; 
+import PollService from "../Service/PollService";
+import AuthService from "../Service/auth.service";
+import {withRouter} from 'react-router-dom';
 
 class PublishPoll extends React.Component {
 
@@ -27,6 +30,16 @@ class PublishPoll extends React.Component {
 
     
     publishButtonClicked() {
+        PollService.createPoll(
+            this.state.pollName,
+            this.state.isPublic,
+            AuthService.getCurrentUser().id
+        ).then(() => {
+            PollService.dweetInit(this.state.pollName, AuthService.getCurrentUser().firstname + " " + AuthService.getCurrentUser().lastname);
+            this.props.history.push("/userHome");
+            window.location.reload();
+          },
+        value => console.log("Register poll successfull: ",value));
 
     }
 
@@ -54,6 +67,6 @@ class PublishPoll extends React.Component {
     }
 }
 
-export default PublishPoll; 
+export default withRouter(PublishPoll); 
 
 

@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.3.1",
     "http-proxy-middleware": "^0.19.1",
+    "node-dweetio": "0.0.11",
     "package": "^1.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.0.0-beta.14",

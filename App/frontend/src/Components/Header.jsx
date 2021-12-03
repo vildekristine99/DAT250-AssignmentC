@@ -1,5 +1,4 @@
 import React from "react";
-import AuthService from "../Service/auth.service";
 
 class Header extends React.Component {
     

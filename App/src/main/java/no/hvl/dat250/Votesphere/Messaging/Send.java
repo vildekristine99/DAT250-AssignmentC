@@ -1,6 +1,7 @@
 package no.hvl.dat250.Votesphere.Messaging;
-/*
+
 import no.hvl.dat250.Votesphere.DTO.*;
+import no.hvl.dat250.Votesphere.Entities.Poll;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +19,8 @@ public class Send {
     @Value("routing")
     private String routingkey;
 
-    public void send(PollDTO poll){
+    public void send(Poll poll){
         rabbitTemplate.convertAndSend(exchange, routingkey, poll);
         System.out.println("Send message " + poll);
     }
-}*/
+}

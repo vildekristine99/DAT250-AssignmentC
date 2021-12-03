@@ -1,7 +1,6 @@
 import React from "react";
 import AuthService from "../Service/auth.service.js";
 import { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const UserHome = ({ props }) => {

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PollUserService from "../Service/PollUserService.js";
-import PollUsers from "../API/PollUsers.js";
 import PollService from "../Service/PollService.js";
 import { useHistory } from "react-router";
 

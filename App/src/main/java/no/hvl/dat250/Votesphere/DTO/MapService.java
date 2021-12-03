@@ -86,7 +86,7 @@ public class MapService {
         PollDTO pollDTO = new PollDTO();
         pollDTO.setPollId(poll.getPollId());
         pollDTO.setPollName(poll.getPollName());
-        pollDTO.setPublic(poll.isPublic());
+        pollDTO.setIsPublic(poll.isPublic());
         pollDTO.setCreatorName(poll.getPollUser().getFirstname() + " " + poll.getPollUser().getLastname());
         pollDTO.setYesVotes(poll.getVotes().stream().filter(v -> v.getValue() == true).count());
         pollDTO.setNoVotes(poll.getVotes().stream().filter(v -> v.getValue() == false).count());
