@@ -26,8 +26,7 @@ public class UserController {
     @GetMapping("/users")
     @ResponseBody
     public List<PollUserDTO> getAllUsers() {
-        List<PollUserDTO> pollUsers = mapService.getAllPollUsers();
-        return pollUsers;
+        return mapService.getAllPollUsers();
     }
 
     @GetMapping("/users/{id}")
