@@ -68,7 +68,7 @@ public class MapService {
         return ((List<Poll>) pollRepository
                 .findAll())
                 .stream()
-                .filter(p -> p.getPollUser().getUserId() == pollUserId)
+                .filter(p -> p.getPollUser().getUserId().equals(pollUserId))
                 .map(this::convertToPollDTO)
                 .collect(Collectors.toList());
     }
@@ -77,7 +77,7 @@ public class MapService {
         return ((List<Poll>) pollRepository
                 .findAll())
                 .stream()
-                .filter(p -> p.getPollUser().getUsername() == username)
+                .filter(p -> p.getPollUser().getUsername().equals(username))
                 .map(this::convertToPollDTO)
                 .collect(Collectors.toList());
     }
@@ -88,8 +88,8 @@ public class MapService {
         pollDTO.setPollName(poll.getPollName());
         pollDTO.setIsPublic(poll.isPublic());
         pollDTO.setCreatorName(poll.getPollUser().getFirstname() + " " + poll.getPollUser().getLastname());
-        pollDTO.setYesVotes(poll.getVotes().stream().filter(v -> v.getValue() == true).count());
-        pollDTO.setNoVotes(poll.getVotes().stream().filter(v -> v.getValue() == false).count());
+        pollDTO.setYesVotes(poll.getVotes().stream().filter(v -> v.getValue()).count());
+        pollDTO.setNoVotes(poll.getVotes().stream().filter(v -> !v.getValue()).count());
         return pollDTO;
     }
 
